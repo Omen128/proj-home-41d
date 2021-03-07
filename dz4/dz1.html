@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res">Массив</div>
+    <div id="re">Сумма элементов массива</div>
+    <script>
+    
+    let pr=[]; // объявить массив
+    while (true){
+        let a = prompt('Введите число:');
+        if (a === ''|| a === null || !isFinite(a)) break;
+        pr.push(+a);
+    }
+    console.log(pr);
+    //let pr1 = [1,2,3,4,5,6,7];
+    //console.log(pr1);
+    let sum = 0;
+    for(let i = 0; i < pr.length; i++){
+    sum = sum + pr[i];
+    }
+    console.log(sum);
+    
+    res.innerHTML = pr ;
+    re.innerHTML = sum;
+
+    </script>    
+
+</body>
+</html>
