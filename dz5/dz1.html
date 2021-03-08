@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+img { 
+    margin-right: 5px;
+    cursor: pointer;}
+.container{
+display: flex;
+}
+.container1{
+    display: flex;
+}
+    </style>
+
+</head>
+<body>
+
+   <div id="box"></div> 
+   <div id="big"></div>
+ 
+
+    <script>
+        let s = '<div class="container">';
+
+        let a = {
+            Костел: 'red.jpg',
+            Троицкое: 'troi.jpg',
+            Мир: 'mir.jpg'
+        };
+
+        for (let key in a) {
+s += `<div class="img"><img style="height: 250px" onclick="func('${a[key]}', '${key}')" src="img/${a[key]} "><p align="center">${key}</p></div>`;
+        }
+        // alert(s);
+        box.innerHTML = s + '</div>';
+
+        function func(f, d) {
+            // alert(f);
+            big.innerHTML = 
+            `<div class="container1"><div class="bigImg"><img style="width: 800px" onclick="big.innerHTML =''" src="img/${f}"><p align="center">${d}</p></div></div>`; 
+        }
+
+    </script>
+
+
+</body>
+</html>
