@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    
+
+    <div id="cards">
+        <!-- <div class="card">
+            <div class="pic">
+                <img src="images/card.jpg" alt="">
+                <img src="images/sale.png" alt="">
+                <img src="images/type.png" alt="">
+                <img src="" alt="">
+            </div>
+            <div class="title">
+                <div>Тайная жизнь</div>
+                <div>домашних животных 2</div>
+                
+            </div>
+
+            <div class="price">
+                <div><div>15,00 руб.</div></div>
+                <div>17,00 руб.</div>
+            </div>
+            <div class="rank">
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star_border</span>
+                
+            </div>
+            <div class="order">
+                <a href="#"><img src="images/button.jpg" alt=""></a>
+            </div>
+        </div> -->
+        
+    </div>
+
+
+    <script>
+        let raitingmax = 5;
+        card = {
+            cardname1: "Тайная жизнь",
+            cardname2: "домашних животных 2",
+            cost: 17,
+            currenty: "руб,",
+            file: "card.jpg",
+            type: "type.png",
+            act: "sale.png",
+            sales: true,
+            raiting: 3,
+            but: "button.jpg"
+        }   
+        //полная стоимость
+
+        let fullCost = `${card.cost},00 ${card.currenty}`
+
+        //расчет стоимости по акции
+        let cost1 = 0;
+        cost1 = card.cost * .9;
+        let saleCost = `${Math.floor(cost1)},00 ${card.currenty}`;
+         //alert(saleCost);
+
+        //проверка на акцию
+        let s1 = '';
+        if (card.sales) s1 = `<div>15,00 руб.</div>`;
+
+        //рейтинг
+
+        let raitingfff = raitingmax - card.raiting;
+        //alert(card.raiting);
+        let st = '';
+        for (i = 1; i<=card.raiting; i++){ //Рейтинг желтые звезды
+            st += `<span class="material-icons">star</span>`;
+        }
+        for (i = 1; i<=raitingfff; i++){   //Рейтинг белые звезды
+            st += `<span class="material-icons">star_border</span>`;
+        }
+        let s = `
+        <div class="card">
+            <div class="pic">
+                <img src="images/${card.file}" alt="">
+                <img src="images/${card.act}" alt="">
+                <img src="images/${card.type}" alt="">
+                <img src="" alt="">
+            </div>
+            <div class="title">
+                <div>${card.cardname1}</div>
+                <div>${card.cardname2}</div>
+                
+            </div>
+
+            <div class="price">
+                ${s1}
+               <!-- <div>15,00 руб.</div>-->
+                <div>17,00 руб.</div>
+            </div>
+            <div class="rank">
+                  ${st}          
+            </div>
+            <div class="order">
+                
+            </div>
+        </div>
+        `;
+
+        cards.innerHTML = s;
+        if (card.sales) document.images[1].style.visibility = 'visible';
+
+
+    </script>
+</body>
+</html>
